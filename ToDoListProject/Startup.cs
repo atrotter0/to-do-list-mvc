@@ -25,6 +25,7 @@ namespace ToDoListProject
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseMvc(routes =>
             {
@@ -34,7 +35,7 @@ namespace ToDoListProject
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                //await context.Response.WriteAsync("Hello World!");
             });
         }
     }
