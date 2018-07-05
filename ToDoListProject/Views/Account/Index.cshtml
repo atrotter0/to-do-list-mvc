@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+  <div class='container'>
+    <div class='row'>
+      <div class='page-heading'>
+        <h2>Accounts</h2>
+        <p>Below is a list of user profiles affilliated with Do It!</p>
+      </div>
+      <div class='account-list'>
+        @foreach (var account in Model)
+        {
+          <div class='account-heading'>@account.GetUsername()</div>
+          <div class='account-details'>
+            ID: @account.GetId()<br/>
+            Full Name: @account.GetFullName()<br/>
+            Email: @account.GetEmail()
+          </div>
+        }
+      </div>
+      <a href='/' class='btn btn-lg btn-default'>Home</a>
+    </div>
+  </div>

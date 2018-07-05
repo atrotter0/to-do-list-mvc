@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace ToDoListProject.Models
 {
-    public class User
+    public class Account
     {
         private string _username;
         private string _email;
         private string _fullName;
         private string _password; //encrypt this
         private int _id;
-        private static List<User> _instances = new List<User> {};
+        private static List<Account> _instances = new List<Account> {};
 
-        public User(string username, string email, string fullName, string password)
+        public Account(string username, string email, string fullName, string password)
         {
             _username = username;
             _email = email;
@@ -22,7 +22,7 @@ namespace ToDoListProject.Models
             _id = _instances.Count;
         }
 
-        public User()
+        public Account()
         {
             _instances.Add(this);
             _id = _instances.Count;
@@ -73,7 +73,7 @@ namespace ToDoListProject.Models
             return _id;
         }
 
-        public static List<User> GetAll()
+        public static List<Account> GetAll()
         {
             return _instances;
         }
@@ -83,7 +83,7 @@ namespace ToDoListProject.Models
             _instances.Clear();
         }
 
-        public static User Find(int searchId)
+        public static Account Find(int searchId)
         {
            return _instances[searchId-1];
         }
