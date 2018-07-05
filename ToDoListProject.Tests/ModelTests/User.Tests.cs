@@ -6,8 +6,13 @@ using ToDoListProject.Models;
 namespace ToDoListProject.Tests
 {
     [TestClass]
-    public class UserTest
+    public class UserTest : IDisposable
     {
+        public void Dispose()
+        {
+            User.ClearAll();
+        }
+
         [TestMethod]
         public void GetSetUsername_GetsSetsUsername_String()
         {

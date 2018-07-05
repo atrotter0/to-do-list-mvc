@@ -10,11 +10,5 @@ namespace ToDoListProject.Controllers
         {
             return View();
         }
-
-        [HttpGet("/sign-up")]
-        public ActionResult SignUp()
-        {
-            return View();
-        }
     }
 }

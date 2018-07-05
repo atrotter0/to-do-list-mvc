@@ -17,13 +17,5 @@ namespace ToDoListProject.Tests
             ActionResult Index = controller.Index();
             Assert.IsInstanceOfType(Index, typeof(ViewResult));
         }
-
-        [TestMethod]
-        public void SignUp_ReturnsCorrectView_True()
-        {
-            HomeController controller = new HomeController();
-            ActionResult SignUp = controller.SignUp();
-            Assert.IsInstanceOfType(SignUp, typeof(ViewResult));
-        }
     }
 }
