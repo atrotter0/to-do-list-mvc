@@ -1,12 +1,12 @@
-# Project Name Here
+# To Do List with .NET
 
-#### Epicodus C# exercise, date
+#### Epicodus C# exercise, 07.04.18
 
-#### By Your Name Here
+#### By Abel Trotter
 
 ## Description
 
-Add a description here
+A To-Do list app that allows a user to sign up for an account, create a To Do List, and add/remove items from their list.
 
 ## Specs
 
@@ -34,13 +34,11 @@ Add a description here
 ## Technologies Used
 
 * .Net Core 1.1.4
-
-## Links
-
-* Add links here
+* JavaScript
+* jQuery
 
 ## License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Abel Trotter**
