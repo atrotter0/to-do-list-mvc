@@ -44,5 +44,12 @@ namespace ToDoListProject.Tests
             newUser.SetPassword("password");
             Assert.AreEqual("password", newUser.GetPassword());
         }
+
+        [TestMethod]
+        public void Find_FindsUserById_User()
+        {
+            User newUser = new User();
+            Assert.AreEqual(newUser, User.Find(1));
+        }
     }
 }
