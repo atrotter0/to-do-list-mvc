@@ -46,6 +46,16 @@ namespace ToDoListProject.Tests
         }
 
         [TestMethod]
+        public void GetAll_GetsAllInstancesOfUser_List()
+        {
+            User newUser1 = new User();
+            User newUser2 = new User();
+            User newUser3 = new User();
+            List<User> userList = new List<User> { newUser1, newUser2, newUser3 };
+            CollectionAssert.AreEqual(userList, User.GetAll());
+        }
+
+        [TestMethod]
         public void Find_FindsUserById_User()
         {
             User newUser = new User();
