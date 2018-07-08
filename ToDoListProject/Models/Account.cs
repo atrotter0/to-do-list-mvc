@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using ToDoListProject;
 
 namespace ToDoListProject.Models
 {
@@ -10,22 +12,14 @@ namespace ToDoListProject.Models
         private string _fullName;
         private string _password; //encrypt this
         private int _id;
-        private static List<Account> _instances = new List<Account> {};
 
-        public Account(string username, string email, string fullName, string password)
+        public Account(string username, string email, string fullName, string password, int id = 0)
         {
+            _id = id;
             _username = username;
             _email = email;
             _fullName = fullName;
             _password = password;
-            _instances.Add(this);
-            _id = _instances.Count;
-        }
-
-        public Account()
-        {
-            _instances.Add(this);
-            _id = _instances.Count;
         }
 
         public void SetUsername(string username)
@@ -75,17 +69,28 @@ namespace ToDoListProject.Models
 
         public static List<Account> GetAll()
         {
-            return _instances;
-        }
-
-        public static void ClearAll()
-        {
-            _instances.Clear();
-        }
-
-        public static Account Find(int searchId)
-        {
-           return _instances[searchId-1];
+            List<Account> allAccounts = new List<Account> {};
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM accounts;";
+            MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+            while(rdr.Read())
+            {
+                string accountUsername = rdr.GetString(0);
+                string accountEmail = rdr.GetString(1);
+                string accountFullname = rdr.GetString(2);
+                string accountPassword = rdr.GetString(3);
+                int accountId = rdr.GetInt32(4);
+                Account newAccount = new Account(accountUsername, accountEmail, accountFullname, accountPassword, accountId);
+                allAccounts.Add(newAccount);
+            }
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+            return allAccounts;
         }
     }
 }
