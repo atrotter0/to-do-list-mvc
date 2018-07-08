@@ -2,11 +2,11 @@
   margin-bottom: 30px;
 }
 
-.account-list {
+.section-list {
   margin: 30px auto 30px auto;
 }
 
-.account-heading {
+.section-heading {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 1.5em;
@@ -16,6 +16,6 @@
   margin-top: 20px;
 }
 
-.account-details {
+.section-details {
   
 }

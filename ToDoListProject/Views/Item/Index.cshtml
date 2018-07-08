@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+  var index = 1;
+}
+
+  <div class='container'>
+    <div class='row'>
+      <div class='page-heading'>
+        <h2>Items</h2>
+        <p>Below is a list of user items in our Do It! list:</p>
+      </div>
+      <div class='section-list'>
+        @foreach (var item in Model)
+        {
+          <div class='section-heading'>Item @index</div>
+          <div class='section-details'>
+            ID: @item.GetId()<br/>
+            Description: @item.GetDescription()<br/>
+          </div>
+          index++;
+        }
+      </div>
+      <a href='/' class='btn btn-lg btn-default'>Home</a>
+    </div>
+  </div>
