@@ -19,6 +19,7 @@ A To-Do list app that allows a user to sign up for an account, create a To Do Li
 * Download and install .Net Core 1.1.4
 * Download and install Mono
 * Clone the repo
+* Start Apache and MySql server
 * Run `dotnet restore` from project directory and test directory to install packages
 * Run `dotnet build` from project directory and fix any build errors
 * Run `dotnet test` from the test directory to run the testing suite
@@ -34,6 +35,7 @@ A To-Do list app that allows a user to sign up for an account, create a To Do Li
 ## Technologies Used
 
 * .Net Core 1.1.4
+* MySQL
 * JavaScript
 * jQuery
 
